@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<main>
+	<div class="wrapper">
+
+		<!-- binding de variables -->
+		<h1>{{title|uppercase}}</h1>
+		
+		<section>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>TÍTULO</th>
+						<th>DIRECTOR</th>
+						<th>AÑO</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let film of peliculas">
+						<td>{{film.getID()}}</td>
+						<td>{{film.getTitulo()}}</td>
+						<td>{{film.getDirector()}}</td>
+						<td>{{film.getYear()}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<button (click)="cambiarValorPropiedadMostrarDatos()">Mostrar datos</button>
+			<br><br>
+			<!-- Damos el valor de la clase ".clase-esecial" cuando el valor de mostrarDatos == true -->
+			<p *ngIf="mostrarDatos" [class.clase-crimson]="mostrarDatos">Mostrando ésto porque mostrarDatos = {{mostrarDatos}}</p>
+		</section>
+	</div>
+</main>

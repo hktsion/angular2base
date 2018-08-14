@@ -1,0 +1,17 @@
+*{margin:0; padding: 0;}
+html, body{ width: 100%; overflow-x: hidden; }
+main{font-family: 'Raleway', sans-serif; width: 100%;}
+main .wrapper{width: 70%; margin: 0 auto;}
+
+section{width: 100%; margin: 20px auto;}
+h1{text-align: center; margin: 35px; color:#444;}
+
+button{ margin:1px;width: 20%; padding: 7px; box-sizing: border-box; border: 2px solid crimson; background: crimson; color:#fff; font-weight: bold; font-family: 'Raleway'; transition:all 300ms ease-in-out; }
+button:hover{ background: rgba(237, 20, 61, 0.3);; cursor: pointer;}
+
+/*media querys*/
+@media screen and (min-width: 340px) and (max-width: 800px) {
+	main .wrapper{width: 92%; margin: 0 auto;}
+	table{width: 95%; }
+}
+
