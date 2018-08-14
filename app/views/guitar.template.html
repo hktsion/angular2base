@@ -1,0 +1,13 @@
+<section>
+	<h1>SECCIÓN DE GUITARRAS</h1>
+	<h3>Cambiar el título mediante _2waydatabinding</h3>
+	<p>Vamos a cambiar tanto en la vista como en el modelo los datos de alguna de las GUITARRAS</p>
+	<p>Modificamos mediante la directiva [(ngModel)]="parametro"</p>
+	<p>El parámetro que le pasamos es la propiedad que vamos a cambiar:: guitars[0].modelo</p>
+	<br>
+	<p>El título a cambiar es: <span class="clase-bold">{{guitars[0].marca}} {{guitars[0].modelo}}</span></p>
+	<br>
+	<input type="text" (keypress)="logModelo()" [(ngModel)]="guitars[0].modelo">
+	<br>
+	<span class="small">Podemos ver mediante eventos si estamos cambiando el modelo: (keypress)</span>
+</section>

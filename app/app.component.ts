@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 //importar los modelos que se van a usar en los componentes;
 import { Pelicula }  from './model/pelicula.model';
 
-
 /************************************** DECORADORES **************************************/
 //Decorador: carga la plantilla dentro de la etiqueta.
 //selector: etiqueta en la que se carga el componente
@@ -11,7 +10,7 @@ import { Pelicula }  from './model/pelicula.model';
 //styleUrls: estilos aplicables
 @Component({
 	selector: 'mi-app',
-	templateUrl: './views/peliculas.view.html',
+	templateUrl: './views/view.peliculas.html',
 	styleUrls: ['./assets/css/pelicula.style.css']
 	})
 
@@ -23,23 +22,26 @@ export class AppComponent {
   	public title:string = 'Listado de películas';
 
  	//función para debuguear => la arranco el CONSTRUCTOR para ver los datos que obtengo antes de renderizarlos por pantalla.
- 	public function  debug(param){ console.log(param); }
+ 	//public function debug(param){ console.log(param);  };
 
  	//Array de películas que relleno en el constructor.
- 	public peliculas:Array<Pelicula> = new Array(<Pelicula>);
+ 	public peliculas:Array<Pelicula> = new Array();
 
- 	/********************** DIRECTIVAS **********************/
+ 	/********************** DIRECTIVAS ************************************************************/
  	//Las directivas son funcionalidades que permiten hacer algo. Hacemos un ejemplo con ngIf
  	public mostrarDatos:boolean;
- 	public function cambiarValorPropiedadMostrarDatos(){ this.mostrarDatos = !this.mostrarDatos;}
- 	/********************* fin directivas *******************/
+ 	//public function cambiarValorPropiedadMostrarDatos(){ this.mostrarDatos = !this.mostrarDatos; };
+ 	/********************* fin directivas *********************************************************/
+
+ 	/********************** TWO DATA BINDING ****************************************************/
+ 	//Tenemos formas de variar el modelo desde la template, es lo que se llama el "_2databinding"
+ 	/********************************************************************************************/
 
   	//Contiene métodos y propiedades. Es buena práctica utilizar el constructor. Inicializa las variables y lanza métodos concretos.
   	constructor(){
 
   		//podemos jugar con esta condición para que se muestre o no alguno de los datos dentro de la plantilla peliculas.view.html;
   		this.mostrarDatos = true;
-  		this.opacidad = 1;
 
   		//no es una buena práctica definir los datos directamente desde el constructor, lo suyo es tener un modelo de datos >> creamos model/pelicula.model.ts
   		this.peliculas.push(new Pelicula(1, 'Taxi driver', 'Martin Scorsese', 1977));
@@ -47,6 +49,6 @@ export class AppComponent {
   		this.peliculas.push(new Pelicula(3, 'E.T. El extraterrestre', 'Steven Spielberg', 1982));
 
   		//Podemos tener métodos que se inicialicen cuando se crea la instanciación de la clase.
-  		this.debug(this.peliculas);
+  		//this.debug(this.peliculas);
   	}
   }

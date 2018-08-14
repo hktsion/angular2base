@@ -9,6 +9,5 @@ tbody tr:nth-child(even){background: #f1f1f1;}
 tbody tr:hover{background: #d1ffd7; cursor: pointer;}
 td{ text-align: center; padding: 5px; }
 
-
 .clase-crimson{ color: crimson; font-weight: bold; }
 .clase-2121{ color: #4cab34; font-weight: bold; }
